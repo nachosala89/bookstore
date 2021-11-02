@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Books = () => {
   const books = [
@@ -17,7 +17,7 @@ const Books = () => {
       author: 'S. Collins',
       progress: 64,
       chapter: 'Chapter 16',
-    }
+    },
   ];
 
   return (
@@ -30,19 +30,22 @@ const Books = () => {
               <span>{book.title}</span>
               <span>{book.author}</span>
               <div>
-                <button>Comment</button>
-                <button>Remove</button>
-                <button>Exit</button>
+                <button type="button">Comment</button>
+                <button type="button">Remove</button>
+                <button type="button">Exit</button>
               </div>
             </div>
             <div className="d-flex flex-column">
-              <span>{book.progress}%</span>
+              <span>
+                {book.progress}
+                %
+              </span>
               <span>Completed</span>
             </div>
             <div className="d-flex flex-column">
               <span>CURRENT CHAPTER</span>
               <span>{book.chapter}</span>
-              <button>UPDATE PROGRESS</button>
+              <button type="button">UPDATE PROGRESS</button>
             </div>
           </li>
         ))}
@@ -50,10 +53,10 @@ const Books = () => {
       <hr />
       <h2>ADD NEW BOOK</h2>
       <form>
-        <input type="text" id="title" name="title" placeholder="Book title"></input>
+        <input type="text" id="title" name="title" placeholder="Book title" />
         <select id="category" name="category" placeholder="Category">
           <option>Category</option>
-          <button>ADD BOOK</button>
+          <button type="button">ADD BOOK</button>
         </select>
       </form>
     </>
