@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+/* eslint-disable */
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook, removeBook } from '../redux/books/books';
+import { addBook, fetchBooks, removeBook } from '../redux/books/books';
 
 const Books = () => {
   const dispatch = useDispatch();
 
   const books = useSelector((state) => state.booksReducer);
+  useEffect(() => {
+    dispatch(fetchBooks());
+  }, []);
 
   const [inputs, setInputs] = useState({
     title: '',
@@ -46,7 +50,7 @@ const Books = () => {
             <div className="d-flex flex-column">
               <span>Action</span>
               <span>{book.title}</span>
-              <span>{book.author}</span>
+              <span>{book.category}</span>
               <div>
                 <button type="button">Comment</button>
                 <button type="button" id={book.id} onClick={removeFromStore}>Remove</button>
