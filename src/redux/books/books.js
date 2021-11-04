@@ -26,7 +26,7 @@ const formatBooks = (obj) => {
   const [keys, values] = [Object.keys(obj), Object.values(obj)];
   values.forEach((book, index) => {
     const newBook = {
-      id: keys[index],
+      item_id: keys[index],
       title: book[0].title,
       category: book[0].category,
     };
@@ -35,10 +35,35 @@ const formatBooks = (obj) => {
   return arr;
 };
 
-export const fetchBooks = () => async (dispatch) => {
-  await fetch(URL)
+export const fetchBooks = () => (dispatch) => {
+  fetch(URL)
     .then((response) => response.json())
     .then((books) => dispatch(fetchBooksSuccess(formatBooks(books))));
+};
+
+export const postBook = (book) => (dispatch) => fetch(URL, {
+  method: 'POST',
+  body: JSON.stringify(book),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then((response) => response.status)
+  .then((status) => {
+    if (status === 201) {
+      dispatch(addBook(book));
+    }
+  });
+
+export const deleteBook = (id) => (dispatch) => {
+  fetch(`${URL}/${id}`, {
+    method: 'DELETE',
+    body: JSON.stringify({ item_id: id }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  });
+  dispatch(removeBook(id));
 };
 
 const booksReducer = (state = initialState, action) => {
@@ -51,7 +76,7 @@ const booksReducer = (state = initialState, action) => {
         action.payload,
       ];
     case REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.payload);
+      return state.filter((book) => book.item_id !== action.payload);
     default:
       return state;
   }
