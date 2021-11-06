@@ -1,8 +1,3 @@
-const Categories = () => {
-  const categories = 'Under construction';
-  return (
-    <p className="pt-5 text-center">{categories}</p>
-  );
-};
+const Categories = () => <h1 className="pt-5 text-center">Under construction</h1>;
 
 export default Categories;
