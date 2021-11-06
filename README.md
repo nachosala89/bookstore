@@ -16,7 +16,7 @@
 
 ## Live Demo
 
-[Bookstore](https://nachosala89.github.io/bookstore/public/)
+[Bookstore](https://dazzling-torvalds-218638.netlify.app)
 
 ## Getting Started
 
@@ -37,7 +37,7 @@ In the project root folder:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/nachosala89/bookstore/issues).
 
 ## Show your support
 
