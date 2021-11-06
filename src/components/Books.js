@@ -47,7 +47,7 @@ const Books = () => {
     <div className="container">
       <ul className="books-list">
         {books.map((book) => (
-          <li key={book.item_id} className="row book-item ps-2">
+          <li key={book.item_id} className="row book-item ps-3">
             <div className="d-flex flex-column col-md-5 mt-4">
               <span className="book-category mb-2">{book.category}</span>
               <span className="book-title">{book.title}</span>
@@ -58,12 +58,15 @@ const Books = () => {
                 <button type="button" className="book-btn me-3">Edit</button>
               </div>
             </div>
-            <div className="d-flex col-md-3">
+            <div className="d-flex col-md-2">
               <img src={progressLogo} alt="Progress" className="progress-logo mt-5 me-3" />
               <div className="d-flex flex-column">
                 <span className="percent-number mt-5">64%</span>
                 <span className="percent-symbol">Completed</span>
               </div>
+            </div>
+            <div className="col-md-1 d-flex justify-content-center align-items-center">
+              < div className="line-item"></div>
             </div>
             <div className="d-flex flex-column col-md-4 align-items-start mt-4">
               <span className="current-chapter">CURRENT CHAPTER</span>
