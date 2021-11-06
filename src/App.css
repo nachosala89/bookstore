@@ -111,7 +111,7 @@ ul {
 }
 
 .book-btn {
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', sans-serif;
   font-size: 0.875rem;
   padding: 0;
   font-weight: 300;
