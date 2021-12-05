@@ -2,7 +2,7 @@
 
 # Bookstore
 
-> This project consists of a Single Page App that allows users to create and remove books. It persist the data in an external API. This is built with React and Redux.
+> This project consists of a Single Page App that allows users to create and remove books. It persists the data in an external API. This is built with React and Redux.
 
 ![screenshot](./screenshot.png)
 
